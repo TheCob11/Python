@@ -5,5 +5,5 @@ def encrypter(shift, msg):
 		if msgChars[x] in string.ascii_letters:
 			msgChars[x] = chr(ord(msgChars[x])+shift)
 	msgShifted = ''.join(msgChars)
-	print(msgShifted)
+	return(msgShifted)
 encrypter(1, 'Online Ganondorfs at 200% are stupid.')
