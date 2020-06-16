@@ -13,4 +13,6 @@ def encrypter(shift, msg):
 				msgChars[x] = chr(ord(msgChars[x])+shift)		
 	msgShifted = ''.join(msgChars)
 	return(msgShifted)
-encrypter(26, 'Online Ganondorfs at 120% are stupid.')
+shiftInput = input("Shift? ")
+msgInput = input("Message? ")
+encrypter(shiftInput, msgInput)
