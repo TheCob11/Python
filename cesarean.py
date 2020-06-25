@@ -32,7 +32,7 @@ def Cesarean(shift, msg):
 	msgShifted = ''.join(msgChars)
 	return msgShifted
 #while True:
-#	shiftInput = input("Shift(enter negative shift for decrypter)? ")
+#	shiftInput = input("Shift(enter negative shift to decrypt)? ")
 #	try:
 #		int(shiftInput)
 #	except:
@@ -40,16 +40,21 @@ def Cesarean(shift, msg):
 #	else:
 #		break
 #msgInput = input("Message? ")
-#print(Cesarean(2, "We're no strangers to love"))	
+#print(Cesarean(69, "It's gonna take a lot to take me away from you"))	
 def CesAIrean(mAIsg):
 	mAIsgWords = str.split(mAIsg)
 	for x in range(26):
-		wordCheAIcker = Cesarean(x, mAIsgWords[0])
-		if wordCheck(wordCheAIcker) == True:
-			return("The message was '"+Cesarean(x, mAIsg)+"'")
+		mAIsgChecks = []
+		mAIsgResult = []
+		for w in range(len(mAIsgWords)):
+			wordCheAIcker = Cesarean(x, mAIsgWords[w])
+			if wordCheck(wordCheAIcker) == True:
+				mAIsgChecks.append(True)
+				mAIsgResult.append(wordCheAIcker)
+			else:
+				mAIsgChecks.append(False)
+		if all(mAIsgChecks) == True:
+			return("The message was '"+' '.join(mAIsgResult)+"'")
 
 mAIsgInput = input("What message?")
 print(CesAIrean(mAIsgInput))
-
-
-
