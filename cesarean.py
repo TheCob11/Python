@@ -40,21 +40,30 @@ def Cesarean(shift, msg):
 #	else:
 #		break
 #msgInput = input("Message? ")
-#print(Cesarean(69, "It's gonna take a lot to take me away from you"))	
+#print(Cesarean(69, "Ay yo, what's good, it's ya boi xX69GamerBoiYTXx"))	
 def CesAIrean(mAIsg):
 	mAIsgWords = str.split(mAIsg)
-	for x in range(26):
+	mAIsgLength = len(mAIsgWords)
+	mAIsgRoyale = ["","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+	for x in range(26+1):
+		mAIsgYups = 0
 		mAIsgChecks = []
 		mAIsgResult = []
 		for w in range(len(mAIsgWords)):
 			wordCheAIcker = Cesarean(x, mAIsgWords[w])
 			if wordCheck(wordCheAIcker) == True:
+				mAIsgYups = mAIsgYups + 1
 				mAIsgChecks.append(True)
 				mAIsgResult.append(wordCheAIcker)
 			else:
 				mAIsgChecks.append(False)
+		mAIsgRoyale[x] = mAIsgYups
 		if all(mAIsgChecks) == True:
 			return("The message was '"+' '.join(mAIsgResult)+"'")
+	return("The message was '"+Cesarean((mAIsgRoyale.index(max(mAIsgRoyale))), mAIsg)+"'")
 
 mAIsgInput = input("What message?")
 print(CesAIrean(mAIsgInput))
+
+
+#funny
