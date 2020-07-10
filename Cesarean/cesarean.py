@@ -1,7 +1,7 @@
 import json
 import requests
 import string
-key = "2d330926-e50-41fb-9bfa-4b161269bfa3"
+key = "2d330926-ee50-41fb-9bfa-4b161269bfa3"
 def wordCheck(word):
 	wordResult = requests.get('https://www.dictionaryapi.com/api/v3/references/collegiate/json/'+word+'?key='+key)
 	outputJson = wordResult.json()
@@ -50,51 +50,56 @@ def CesAIrean(mAIsg):
 				mAIsgChecks.append(False)
 		mAIsgRoyale[x] = mAIsgYups
 		if all(mAIsgChecks) == True:
-			return("The message was '"+' '.join(mAIsgResult)+"'")
-	return("The message was '"+Cesarean((mAIsgRoyale.index(max(mAIsgRoyale))), mAIsg)+"'")
+			return("".join(mAIsgResult))
+	return(Cesarean((mAIsgRoyale.index(max(mAIsgRoyale))), mAIsg))
+#ecOrDc = input("encrypt or Decrypt(1 for encrypter, 2 for decrypter)? ")
+#while True:
+#	try:
+#		int(ecOrDc)
+#	except:
+#		print("Not an int")
+#	else:
+#		break
+#
+#fileOpen = input("Use the file?(Y/N) ")
+#while True:
+#	if fileOpen == "y" or fileOpen == "Y":
+#		file = open("file.txt", "rt")
+#		break
+#	elif fileOpen == "n" or fileOpen == "N":
+#		break
+#	else:
+#		print("Y or N")
+#
+#while True:
+#	if int(ecOrDc) == 1:
+#		while True:
+#			shiftInput = input("Shift? ")
+#			try:
+#				int(shiftInput)
+#			except:
+#				print("Not an int")
+#			else:
+#				break
+#		if fileOpen == "y" or fileOpen == "Y":
+#			print(Cesarean(shiftInput, file.read()))	
+#		else:
+#			msgInput = input("Message? ")
+#			print(Cesarean(shiftInput, msgInput))	
+#			break
+#	elif int(ecOrDc) == 2:
+#		if fileOpen == "y" or fileOpen == "Y":
+#			CesAIrean(file.read())
+#		elif fileOpen == "n" or fileOpen == "N":
+#			mAIsgInput = input("Message? ")
+#			print(CesAIrean(mAIsgInput))
+#	else:
+#		print("Input 1 or 2")
+#	break
 
-#funny
-ecOrDc = input("encrypt or Decrypt(1 for encrypter, 2 for decrypter)? ")
-while True:
-	try:
-		int(ecOrDc)
-	except:
-		print("Not an int")
-	else:
-		break
 
-fileOpen = input("Use the file?(Y/N) ")
-while True:
-	if fileOpen == "y" or fileOpen == "Y":
-		file = open("file.txt") #funny
-		break
-	elif fileOpen == "n" or fileOpen == "N":
-		break
-	else:
-		print("Y or N")
 
-while True:
-	if int(ecOrDc) == 1:
-		while True:
-			shiftInput = input("Shift? ")
-			try:
-				int(shiftInput)
-			except:
-				print("Not an int")
-			else:
-				break
-		if fileOpen == "y" or fileOpen == "Y":
-			print(Cesarean(shiftInput, file.read()))	
-		else:
-			msgInput = input("Message? ")
-			print(Cesarean(shiftInput, msgInput))	
-			break
-	elif int(ecOrDc) == 2:
-		if fileOpen == "y" or fileOpen == "Y":
-			print(CesAIrean(file.read()))
-		elif fileOpen == "n" or fileOpen == "N":
-			mAIsgInput = input("Message? ")
-			print(CesAIrean(mAIsgInput))
-	else:
-		print("Input 1 or 2")
-	break
+with open("file.txt", "rt") as f:
+	for line in f:
+		line = line.split("\n")
+		print(CesAIrean(line[0]))
